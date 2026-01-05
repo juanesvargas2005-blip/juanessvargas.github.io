@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+  font-family: 'MiTipografia'; 
+  src: url(Tipografia/ZTBrosOskon90s-ExtraLight.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MiTipografia2'; 
+  src: url(Tipografia/SFPRODISPLAYREGULAR.OTF) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'MiTipografia3'; 
+  src: url(Tipografia/PFMellon-Regular-subset.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1, h2, p, div.dos-columnas, div.video-container {
+    margin-top: 35px;
+}
+.vaseline {
+    background-color: #1077C4;
+}
+.colortext2 {
+    color: #77C602;
+}
+.days {
+    background-color: #004AAD;
+}
+.cupiduo {
+    background-color: white;
+}
+
+.decode {
+    background-color: white;
+}
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+    gap: 10px; /* Espacio entre columnas */
+    margin: 30px;
+    margin-top: 20px;
+    
+}
+
+.fondorojo {
+    background-color: #E3151A;
+      padding: 20px 0; 
+}
+
+.decode .video-container {
+    background-color:#E3151A ;
+    padding: 60px 0;
+}
+
+.fondorojo .mitad {
+    width: 250px; /* Reduce de 350px a 250px en móvil */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dos-columnas > div:nth-child(2) {
+    margin-top: 100px; /* Ajusta el valor según necesites */
+    
+}
+
+h1 {
+  
+    text-align: center;
+}
+
+.colortext {
+    color: white;
+}
+
+.colortexto2 {
+    color:  #E3151A;
+
+}
+.tipotext{
+    font-family: 'MiTipografia', serif;
+}
+
+
+
+.tipotext2{
+    font-family: 'MiTipografia2', serif;
+}
+
+.tipotext3{
+    font-family: 'MiTipografia3', serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.centro {
+    text-align: center;
+    margin: 40px;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.video-container iframe {
+    width: 90%;      /* Tamaño en celular */
+    height: 250px;   /* Alto en celular */
+    border-radius: 8px;
+}
+
+
+
+.contendorimg {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    margin-top: 0 !important; /* Importante para sobrescribir */
+    padding: 0;
+
+}
+
+.contenedor-imagen {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente (opcional) */
+}
+
+.mitad {
+    margin-top: 40px;
+    width: 350px;
+    height: 100%;
+}
+
+
+.contendorimg img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.days .dos-columnas > div:nth-child(2) img {
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+    left: -20px;
+}
+
+/* Imagen en móvil - solo para Vaseline */
+.vaseline .dos-columnas > div:first-child img {
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+    left: -20px;
+}
+
+.cupiduo .dos-columnas > div:first-child img {
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+    left: -10px;
+}
+.cupiduo .dos-columnas {
+    margin-top: -20px; /* Sube todo el contenedor */
+}
+.decode .dos-columnas {
+    margin-top: -20px; /* Sube todo el contenedor */
+}
+
+/* Cupiduo: reduce espacio de la imagen del título */
+.cupiduo .mitad {
+    margin-top: 20px; /* Reduce de 40px a 20px */
+    margin-bottom: -10px; /* Opcional: reduce espacio abajo también */
+}
+.footer{
+background:#000;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+ margin-top: 0 !important;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:rgb(234, 167, 51);
+}
+.final {
+        
+        font-family: 'MiTipografia2', serif;
+        text-align: center;
+        font-size: 1rem;
+        padding: 60px;
+        margin-bottom: 35px;
+
+    }
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.cupiduo .video-container {
+    background-color:#77C602 ;
+    padding: 50px 0;
+}
+
+
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+.decode .contendor1img {
+    display: flex;
+    flex-direction: column; /* En móvil una debajo de otra */
+    gap: 25px;
+    margin: 0;
+    margin-top: 0px;
+    padding: 50px;
+    background-color: #E3151A;
+}
+
+.decode .contendor1img img {
+    width: 100%; /* Más pequeñas en móvil (ajusta este porcentaje) */
+    margin: 0 auto; /* Centra las imágenes */
+}
+
+.decode .video-container {
+    background-color: #E3151A;
+    padding: 60px 0;
+    margin-bottom: 0; /* Sin espacio abajo */
+}
+
+.decode .contendorimg {
+    margin-top: 30px;
+    padding-top: 0;
+}
+
+
+@media (min-width: 1024px) {
+    .video-container iframe {
+        width: 1200px;
+        height: 675px;
+    }
+    .final {
+        font-size: 1.5rem;
+    }
+    .fondorojo {
+        padding: 20px 0; /* Menos padding en escritorio también */
+    }
+    .decode .dos-columnas > div:nth-child(2) img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 270px; /* Ajusta el tamaño igual que el de DAYS */
+        top: 30%; /* Mueve la imagen hacia donde la quieras */
+    }
+    
+    
+    .fondorojo .mitad {
+        width: 250px; /* Ajusta el tamaño en escritorio */
+    }
+
+    .decode .barra {
+        width: 650px; /* Ajusta el tamaño que tú quieras */
+        margin-top: 40px; /* Opcional */
+    }
+
+
+
+
+    .tipotext{
+        font-size: 2rem;
+    }
+
+    .cupiduo .centro {
+    text-align: center;
+    margin: 100px;
+    margin-top: -100px;
+}
+
+    .tipotext2{
+        font-size: 1.5rem;
+    }
+
+    .tipotext3{
+        font-size: 4rem;
+        text-align: center;
+    }
+    .grande {
+        width: 400px;
+    }
+    
+    .dos-columnas {
+       
+        gap: 400px;
+        margin: 130px;
+        margin-top: 0;
+        position: relative; /* Importante para posicionar la imagen */
+    }
+    
+    .dos-columnas > div:nth-child(2) {
+        margin-top: 100px;
+    }
+    
+    /* En escritorio: imagen de Vaseline (primera columna) al centro */
+    .vaseline .dos-columnas > div:first-child img {
+        position: absolute;
+        left: 47%;
+        transform: translateX(-50%);
+        width: 350px;
+        top: 2%;
+        
+    }
+    
+    
+    /* En escritorio: imagen de Days (segunda columna) al centro */
+    .days .dos-columnas > div:nth-child(2) img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 270px;
+        top: -10%;
+    }
+        .cupiduo .dos-columnas > div:first-child img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        top: 2%;
+    }
+    .centro {
+        margin: 120px;
+    }
+    .days .contendorimg {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px; /* espacio entre imágenes */
+        margin-bottom: 50px;
+    }
+    .decode .contendor1img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px; /* espacio entre imágenes */
+        margin-bottom: 0px;
+        margin-top: 0px;
+         background-color: #E3151A;
+    padding: 40px 0;
+    }
+    .decode .contendor1img img {
+        width: 30%; /* 3 imágenes en fila */
+        height: auto;
+    }
+    
+
+    .days .contendorimg img {
+        width: 30%; /* 3 imágenes en fila */
+        height: auto;
+    }
+     .cupiduo .contendorimg {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+        gap: 0;
+    }
+    
+    /* Las dos primeras ocupan toda la fila */
+    .cupiduo .contendorimg img:nth-child(1),
+    .cupiduo .contendorimg img:nth-child(2) {
+        grid-column: 1 / -1; /* Ocupan ambas columnas */
+        width: 100%;
+    }
+    
+    /* Las dos últimas una al lado de la otra */
+    .cupiduo .contendorimg img:nth-child(3),
+    .cupiduo .contendorimg img:nth-child(4) {
+        width: 100%;
+    }
+
+    
+}
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}

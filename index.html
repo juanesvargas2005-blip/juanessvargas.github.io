@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Juanes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Imagenes/Logo Juanes 1.png">
+    <link rel="stylesheet" href="PrincipalCSS.css">
+    <link rel="stylesheet" href="menu3.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="wow.min.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <style>
+        /* Contenedor de cada logro */
+        .logro-wrapper {
+            display: flex;
+            align-items: stretch;
+            /* Hace que ambos lados tengan la misma altura */
+            min-height: 100vh;
+            /* Ocupa toda la altura de la pantalla */
+            width: 100%;
+        }
+
+        /* Fondos */
+        .logro-naranja {
+            background-color: rgb(234, 167, 51);
+        }
+
+        .logro-blanco {
+            background-color: #FFFFFF;
+        }
+
+        /* Imágenes */
+        .logro-imagen-izq,
+        .logro-imagen-der {
+            flex: 1;
+            min-height: 100vh;
+            /* Ocupa toda la altura de la pantalla */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logro-imagen-izq img,
+        .logro-imagen-der img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cubre todo el espacio sin deformarse */
+            object-position: center;
+            /* Centra la imagen */
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Contenido de texto */
+        .logro-contenido-der,
+        .logro-contenido-izq {
+            flex: 1;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Ya tienes .texth1 y .textpre definidos en tu CSS, solo ajustamos alineación */
+        .logro-contenido-der .texth1,
+        .logro-contenido-izq .texth1 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .logro-contenido-der .textpre,
+        .logro-contenido-izq .textpre {
+            margin-bottom: 30px;
+            padding: 0;
+        }
+
+        /* Botones */
+        .btn-logro,
+        .btn-logro-blanco {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-family: 'MiTipografia2', serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        /* Botón para fondo naranja */
+        .btn-logro {
+            background-color: #000000;
+            color: rgb(234, 167, 51);
+            border: 2px solid #000000;
+        }
+
+        .btn-logro:hover {
+            background-color: transparent;
+            color: #000000;
+            transform: translateY(-3px);
+        }
+
+        /* Botón para fondo blanco */
+        .btn-logro-blanco {
+            background-color: rgb(234, 167, 51);
+            color: #000000;
+            border: 2px solid rgb(234, 167, 51);
+        }
+
+        .btn-logro-blanco:hover {
+            background-color: transparent;
+            border-color: #000000;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 767px) {
+            .logro-wrapper {
+                flex-direction: column !important;
+                min-height: auto;
+            }
+
+            /* IMPORTANTE: Todas las imágenes van arriba */
+            .logro-imagen-izq,
+            .logro-imagen-der {
+                order: 1;
+                /* Imagen siempre primero */
+                min-height: 50vh;
+                /* Altura de la mitad de la pantalla */
+                width: 100%;
+            }
+
+            /* IMPORTANTE: Todo el contenido va abajo */
+            .logro-contenido-der,
+            .logro-contenido-izq {
+                order: 2;
+                /* Texto siempre segundo */
+                padding: 40px 25px;
+                /* Más espacio a los lados */
+                min-height: auto;
+            }
+
+            /* Ajustes de texto para móvil */
+            .logro-contenido-der .texth1,
+            .logro-contenido-izq .texth1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                text-align: center;
+                /* Centrado en móvil */
+            }
+
+            .logro-contenido-der .textpre,
+            .logro-contenido-izq .textpre {
+                font-size: 1rem;
+                line-height: 1.6;
+                text-align: left;
+                margin-bottom: 25px;
+            }
+
+            /* Botones en móvil */
+            .btn-logro,
+            .btn-logro-blanco {
+                padding: 12px 30px;
+                font-size: 1rem;
+                width: 100%;
+                /* Botón de ancho completo */
+                text-align: center;
+                align-self: stretch;
+                /* Ocupa todo el ancho disponible */
+            }
+        }
+
+        /* Responsive para tablet */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logro-wrapper {
+                flex-direction: column !important;
+                min-height: auto;
+            }
+
+            .logro-imagen-izq,
+            .logro-imagen-der {
+                order: 1;
+                min-height: 50vh;
+                width: 100%;
+            }
+
+            .logro-contenido-der,
+            .logro-contenido-izq {
+                order: 2;
+                padding: 50px 40px;
+            }
+
+            .logro-contenido-der .texth1,
+            .logro-contenido-izq .texth1 {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+
+            .logro-contenido-der .textpre,
+            .logro-contenido-izq .textpre {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+
+            .btn-logro,
+            .btn-logro-blanco {
+                align-self: center;
+                /* Centrado en tablet */
+            }
+        }
+
+        .fondospottv {
+            background-color: rgb(234, 167, 51);
+            padding: 60px 0;
+        }
+
+        .contenedor-spottv {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Título principal - mismo estilo que "Proyectos Fotográficos" */
+        .fondospottv .textofot {
+            font-family: 'MiTipografia';
+            font-size: 2rem;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 40px 40px 10px 40px;
+            /* Reducido el padding inferior */
+            margin: 0;
+            margin-bottom: 5px;
+            /* Espacio mínimo */
+        }
+
+        /* Subtítulo del spot - reducir margen superior */
+        .titufot-spot {
+            font-family: 'MiTipografia2';
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-top: 0;
+            /* Sin margen superior */
+            margin-bottom: 40px;
+            /* Espacio antes del video */
+        }
+
+
+
+        /* Contenedor del video responsive */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive para móvil */
+        @media (max-width: 767px) {
+           
+
+            .contenedor-spottv {
+                padding: 0 20px;
+            }
+
+           
+
+
+            .textfo-spot {
+                font-size: 0.9rem;
+                padding: 0 15px;
+                margin-bottom: 10px;
+            }
+
+            .video-container {
+                border-radius: 10px;
+            }
+
+            .fondospottv .textofot {
+                font-size: 1.8rem;
+                padding: 30px 20px 4px 20px;
+                margin-bottom: 5px;
+            }
+
+            .titufot-spot {
+                font-size: 1.1rem;
+                padding: 0 15px;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Responsive para tablet */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .fondospottv .textofot {
+                font-size: 2.2rem;
+            }
+
+            .titufot-spot {
+                font-size: 1.15rem;
+            }
+
+            .textfo-spot {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive para escritorio */
+        @media (min-width: 1025px) {
+            .fondospottv .textofot {
+                font-size: 2.9rem;
+            }
+
+            .titufot-spot {
+                font-size: 1.4rem;
+            }
+
+            .textfo-spot {
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+
+            .video-container {
+                border-radius: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div><img src="Imagenes/LogoJuanes1.png" alt="" class="logo"></div> <!-- Logo de la pagina -->
+            <div class="button_container" id="toggle"> <!-- Menu hamburguesa -->
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+            <div class="overlay" id="overlay">
+                <nav class="overlay-menu">
+                    <ul> <!-- Enlaces de navegación -->
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#acerca">Acerca de</a></li>
+                        <li><a href="#trabajos">Trabajos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="contenedor " id="inicio">
+            <p class="p1 ">PortafolioFinalFinalJuanes.png</p>
+            <p class="p2">Estrategia</p>
+            <p class="p3">Creatividad</p>
+            <p class="p4">Publicidad</p>
+        </div>
+
+        <div class="contenedor2 wow animate__animated animate__fadeIn" id="acerca">
+
+            <div class="cedula-container wow animate__animated animate__fadeInUp">
+                <img src="Imagenes/cedula.png" alt="" class="cedula ">
+                <!-- Textos encima de la cédula -->
+                <div class="textcedula texto1">Vargas Jerez</div>
+                <div class="textcedula texto2">Juanes</div>
+                <div class="textcedula texto3">28/12/2006 </div>
+                <div class="textcedula texto4">La tierra de las flores y las frutas (Ambato)</div>
+                <div class="textcedula texto5">Desconocido</div>
+            </div>
+            <div class="chatgpt-wrapper">
+                <img src="Imagenes/set1f.png" alt="" class="chatgpt wow animate__animated animate__fadeInUp">
+                <div class="chattext-encima wow">
+                    <p><span id="texto-typing"></span><span class="cursor-typing">|</span>
+                    <p>
+                </div>
+            </div>
+            <img src="Imagenes/set6 - Editada.png" alt="" class="barra wow animate__animated animate__fadeInUp">
+        </div>
+        <div class="contenedor5 wow animate__animated animate__fadeIn">
+            <div class="contenedor3 ">
+                <div class="wow animate__animated animate__fadeInDown">
+                    <div class="noti-container ">
+                        <img src="Imagenes/noti.png" alt="" class="noti1">
+                        <div class="textnotititulo titulo-noti1">EDUCACIÓN</div>
+                        <div class="textnoti descripcion-noti1">Universidad San Francisco de Quito (Publicidad y Minor
+                            en Medios Interactivos)</div>
+                    </div>
+                    <div class="noti-container ">
+                        <img src="Imagenes/noti.png" alt="" class="noti2">
+                        <div class="textnotititulo titulo-noti2">SOFTWARE</div>
+                        <div class="textnoti descripcion-noti2">-Adobe Ilustrator -Adobe Photoshop -CapCut -Lightroom
+                            -Processing</div>
+                    </div>
+                    <div class="noti-container ">
+                        <img src="Imagenes/noti.png" alt="" class="noti3">
+                        <div class="textnotititulo titulo-noti3">IDIOMAS</div>
+                        <div class="textnoti descripcion-noti3">-English -Español -Spanglish -El idioma de la
+                            creatividad</div>
+                    </div>
+                    <div class="noti-container ">
+                        <img src="Imagenes/notilarga.png" alt="" class="noti4">
+                        <div class="textnotititulo titulo-noti4">EXPERIENCIA</div>
+                        <div class="textnoti descripcion-noti4">-CM/Social Media Mannager <strong>Campus Life
+                                USFQ</strong> (1.5 años) -Content Creator Podcast <strong>ConGanasDe</strong> (6 meses)
+                            -CM Club <strong>Importadora Alvarado</strong> (1 año) -CM/Social Media Mannager
+                            <strong>Decanato Artes Liberales</strong> USFQ (0.5 años) -CM/Social Media Mannager
+                            <strong>Publicidad</strong> (0.5 años)...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LOGRO 3: New York (Naranja, foto izq, texto der) -->
+        <div class="logro-wrapper logro-naranja wow animate__animated animate__fadeIn">
+            <div class="logro-imagen-izq wow animate__animated animate__fadeInLeft">
+                <img src="Imagenes/web4.png" alt="New York">
+            </div>
+            <div class="logro-contenido-der wow animate__animated animate__fadeInRight">
+                <h2 class="texth1">Logros</h2>
+                <p class="textpre">
+                    Fuimos a New York a presentar nuestra campaña en vivo en el <strong>One Club for
+                        Creativity</strong>, y quedamos <strong>finalistas en Client Pitch</strong> entre más de 5,000
+                    equipos de todo el mundo. Con la misma campaña también llegamos al <strong>segundo round en Young
+                        Ones</strong>. Una experiencia que me hizo creer un poco más en lo que hago, y que en Ecuador
+                    tenemos ideas de exportación.
+                </p>
+                <a href="https://www.behance.net/gallery/224411343/The-Ultimate-Skin/modules/1282222813" target="_blank"
+                    class="btn-logro">
+                    Ver campaña en Behance →
+                </a>
+            </div>
+        </div>
+        <!-- LOGRO 2: Hackathon (Blanco, texto izq, foto der) -->
+        <div class="logro-wrapper logro-blanco wow animate__animated animate__fadeIn">
+            <div class="logro-contenido-izq wow animate__animated animate__fadeInLeft">
+                <h2 class="texth1">Logros</h2>
+                <p class="textpre">
+                    Ganamos el primer lugar en el hackathon de Medios Interactivos con una campaña para <strong>DeUna
+                        enfocada en educación financiera en Ecuador.</strong> Más allá del premio, fue una confirmación
+                    personal: todo lo que aprendo en publicidad puede aplicarse a cualquier reto, en cualquier
+                    industria, siempre que haya una idea clara y una intención real de generar impacto.
+                </p>
+                <a href="https://www.behance.net/gallery/224418323/El-Hormiguero-DeUna/modules/1282272371"
+                    target="_blank" class="btn-logro-blanco">
+                    Ver campaña en Behance →
+                </a>
+            </div>
+            <div class="logro-imagen-der wow animate__animated animate__fadeInRight">
+                <img src="Imagenes/log2.jpg" alt="Hackathon">
+            </div>
+        </div>
+        <div class="logro-wrapper logro-naranja wow animate__animated animate__fadeIn">
+            <div class="logro-imagen-izq wow animate__animated animate__fadeInLeft">
+                <img src="Imagenes/log1.jpg" alt="TikTok">
+            </div>
+            <div class="logro-contenido-der wow animate__animated animate__fadeInRight">
+                <h2 class="texth1">Logros</h2>
+                <p class="textpre">
+                    Logré crear una <strong>comunidad de más de medio millón de seguidores en TikTok,</strong>
+                    descubriendo un nuevo universo digital donde las marcas no hablan solas, sino que conversan. Esta
+                    experiencia me llevó a colaborar con grandes marcas a nivel mundial y a entender que el contenido
+                    más poderoso nace cuando es auténtico, humano y conecta de verdad.
+                </p>
+                <a href="https://www.tiktok.com/@estebannotes" target="_blank" class="btn-logro">
+                    Ver mi TikTok →
+                </a>
+            </div>
+        </div>
+
+
+
+
+        <div class="carpetas" id="trabajos">
+            <img src="Imagenes/Campañas.png" alt="" class="imagen-fondo">
+
+            <a href="100 Days.html">
+                <img src="Imagenes/1.png" alt="" class="img-arriba-izq">
+            </a>
+            <a href="Vaseline.html">
+                <img src="Imagenes/2.png" alt="" class="img-arriba-der">
+            </a>
+            <a href="CupiDuo.html">
+                <img src="Imagenes/3.png" alt="" class="img-abajo-izq">
+            </a>
+            <a href="DecodeYourLegacy.html">
+                <img src="Imagenes/4.png" alt="" class="img-abajo-der">
+            </a>
+        </div>
+        <div class="fondospottv">
+            <div class="contenedor-spottv">
+                <h2 class="textofot">Spot de TV</h2>
+                <p class="titufot-spot"><strong>"No Aflojes De Más"</strong></p>
+
+                <!-- Video responsive -->
+                <div class="video-container wow animate__animated animate__fadeIn">
+                    <video controls preload="metadata">
+                        <source src="video/spottv.mov" type="video/mp4">
+
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="fondofotos">
+            <div>
+                <h2 class="textofot">Proyectos Fotográficos</h2>
+                <p class="titufot"> <strong>"Raíces de Resilencia"</strong></p>
+                <br>
+                <p class="textfo">Este proyecto fotográfico retrata la <strong>resiliencia de una comunidad de mujeres
+                        agricultoras</strong> que, tras haber sido víctimas de abuso por parte de sus esposos,
+                    decidieron unirse y crear un espacio de apoyo y trabajo entre ellas. Con valentía y
+                    determinación,<strong>encontraron en la herencia más valiosa de sus padres </strong> , el
+                    conocimiento de la tierra y el arte de cultivar, la fuerza para salir adelante y brindar un futuro
+                    digno a sus hijos.
+                    <br><br>
+                    Más que un relato de dolor, estas imágenes buscan mostrar la esperanza, la unión y la belleza de
+                    mujeres que <strong>transformaron la adversidad en semillas de vida.</strong> Cada surco y cada
+                    cosecha se convierten en símbolo de resistencia, amor y compromiso con la tierra y con su comunidad.
+                </p>
+            </div>
+            <div class="carrusel">
+                <button class="carrusel-btn prev">&#10094;</button>
+
+                <div class="carrusel-track">
+                    <img src="Imagenes/fot1.png" alt="">
+                    <img src="Imagenes/fot2.png" alt="">
+                    <img src="Imagenes/fot3.png" alt="">
+                    <img src="Imagenes/fot4.png" alt="">
+                    <img src="Imagenes/fot5.png" alt="">
+                    <img src="Imagenes/fot6.png" alt="">
+                    <img src="Imagenes/fot7.png" alt="">
+                    <img src="Imagenes/fot8.png" alt="">
+                    <img src="Imagenes/fot9.png" alt="">
+                    <img src="Imagenes/fot10.png" alt="">
+                </div>
+
+                <button class="carrusel-btn next">&#10095;</button>
+            </div>
+            <div class="fondofotos2">
+                <div>
+                    <br><br><br>
+
+                    <p class="titufot2"> <strong>“Retratos de Mujeres Reales”</strong></p>
+                    <br>
+                    <p class="textfo2">Este proyecto retrata la <strong>fortaleza de mujeres de escasos recursos en el
+                            Ecuador,</strong> mujeres que, desde la clase obrera, son el verdadero motor de sus hogares.
+                        A través de un enfoque realista, <strong>las fotografías muestran su esfuerzo
+                            cotidiano,</strong> su resiliencia y la belleza de una fuerza silenciosa que sostiene
+                        familias y comunidades enteras.</p>
+                </div>
+                <div class="carrusel">
+                    <button class="carrusel-btn prev">&#10094;</button>
+                    <div class="carrusel-track">
+                        <img src="Imagenes/se1.png" alt="">
+                        <img src="Imagenes/se2.png" alt="">
+                        <img src="Imagenes/se3.png" alt="">
+                        <img src="Imagenes/se4.png" alt="">
+                        <img src="Imagenes/se5.png" alt="">
+                        <img src="Imagenes/se6.png" alt="">
+
+                    </div>
+                    <button class="carrusel-btn next">&#10095;</button>
+                </div>
+
+            </div>
+            <div class="contenedor9">
+                <p class="textdise">Diseño</p>
+                <div class="poster1-container  wow animate__animated animate__bounceInLeft">
+                    <img src="Imagenes/pos1.png" alt="">
+                </div>
+                <div class="poster2-container  wow animate__animated animate__bounceInRight">
+                    <img src="Imagenes/pos2.png" alt="">
+                </div>
+                <div class="poster3-container  ">
+                    <img src="Imagenes/icon.png" alt="">
+                </div>
+                <div class="poster4-container  ">
+                    <img src="Imagenes/icon2.png" alt="">
+                </div>
+
+            </div>
+            <div class="carrusel-3d fondonara ">
+                <div class="carrusel-3d-track wow animate__animated animate__fadeIn">
+                    <img src="Imagenes/car1.png" alt="" class="activo">
+                    <img src="Imagenes/car2.png" alt="" class="izquierda">
+                    <img src="Imagenes/car3.png" alt="" class="derecha">
+                </div>
+                <button class="btn-rotar">Siguiente</button>
+            </div>
+            <div class="flipbook-container wow animate__animated animate__fadeIn ">
+                <iframe
+                    src="https://www.flipbookpdf.net/web/site/f1d76721c4a37cf7b8fe12fbdd4f1f73b8f32262202601.pdf.html"
+                    width="900" height="637" frameborder="0" webkitAllowFullScreen mozallowfullscreen
+                    allowFullScreen></iframe>
+            </div>
+            <div class="contenedor10 ">
+                <div class="mupi-container wow animate__animated animate__fadeIn">
+                    <img src="Imagenes/mupi.jpg" alt="">
+                </div>
+                <div class="mupi2-container wow animate__animated animate__fadeIn">
+                    <img src="Imagenes/mupi2.png" alt="">
+                </div>
+                <div class="mupi3-container wow animate__animated animate__fadeIn">
+                    <img src="Imagenes/mupi3.jpg" alt="">
+                </div>
+                <div class="mupi4-container wow animate__animated animate__fadeIn">
+                    <img src="Imagenes/r67.png" alt="">
+                </div>
+
+            </div>
+            <div class="contenedor-con-fondo" id="contacto">
+                <div class="rectangulo-glass">
+                    <div class="fotoyo-container">
+                        <img src="Imagenes/JA2.png" alt="">
+                    </div>
+                    <p class="textyo">Contrátame</p>
+                    <p class="textyo2">“Si scrolleaste hasta aquí, básicamente quieres que trabajemos juntos. Y si
+                        todavía dudas en reclutarme, scrollea hacia arriba otra vez.”</p>
+                    <div class="fotoyo3-container">
+                        <img src="Imagenes/logoyo.png" alt="">
+                    </div>
+                    <div class="iconos-fila">
+                        <a href="https://www.behance.net/juanesvargas4" target="_blank">
+                            <img src="Imagenes/lo1.png" alt="Icono 1">
+                        </a>
+                        <a href="https://tu-enlace-2.com" target="_blank">
+                            <img src="Imagenes/lo2.png" alt="Icono 2">
+                        </a>
+                        <a href="https://www.instagram.com/juaness_vargas?igsh=MWU2MWdtc2F2NzQwbg%3D%3D&utm_source=qr"
+                            target="_blank">
+                            <img src="Imagenes/lo3.png" alt="Icono 3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+    </main>
+</body>
+<footer>
+    <div class="footer">
+        <div class="row">
+            <a href="https://wa.me/593985824002" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/juaness_vargas?igsh=MWU2MWdtc2F2NzQwbg%3D%3D&utm_source=qr"
+                target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.behance.net/juanesvargas4" target="_blank"><i class="fa fa-behance"></i></a>
+        </div>
+        <div class="row">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca">Sobre mí</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+        </div>
+        <div class="row">
+            Diseñado, desarrollado y publicitado por mí — porque la creatividad también se programa.
+        </div>
+</footer>
+<script src="scriptv2.js"></script>
+<script>
+    document.querySelectorAll(".carrusel").forEach(carrusel => {
+        const track = carrusel.querySelector(".carrusel-track");
+        const imgs = track.querySelectorAll("img");
+
+        let index = 0;
+
+        const prev = carrusel.querySelector(".prev");
+        const next = carrusel.querySelector(".next");
+
+        function update() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        next.onclick = () => {
+            if (index < imgs.length - 1) {
+                index++;
+                update();
+            }
+        };
+
+        prev.onclick = () => {
+            if (index > 0) {
+                index--;
+                update();
+            }
+        };
+    });
+</script>
+
+</html>
